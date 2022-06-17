@@ -1,0 +1,35 @@
+﻿@model Core_Proje.Models.AddTestimonialModel
+@{
+    ViewData["Title"] = "AddTestimonial";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Add Testimonial</h4>
+            <br />
+            <form method="post" asp-controller="Testimonial" asp-action="AddTestimonial" class="forms-sample" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Testimonial Name</label>
+                    <input type="text" class="form-control" asp-for="ClientName" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label >Profession</label>
+                    <input type="text" class="form-control" asp-for="Profession" placeholder="Profession">
+                </div>
+                <div class="form-group">
+                    <label >Comment</label>
+                    <input type="text" class="form-control" asp-for="Comment" placeholder="Comment">
+                </div>
+                <div class="form-group">
+                    <label>Upload Image</label>
+                    <input type="file" name="Picture" class="form-control"/>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    
+            </form>
+        </div>
+    </div>
+</div>
+

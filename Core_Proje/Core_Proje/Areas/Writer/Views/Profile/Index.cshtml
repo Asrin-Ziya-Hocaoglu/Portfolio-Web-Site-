@@ -1,0 +1,46 @@
+﻿@model Core_Proje.Areas.Writer.Models.UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"> Edit Profile Informations</h4>
+                  
+                  <form class="forms-sample"  method="post" enctype="multipart/form-data">
+                      <div class="form-group">
+                          <label for="exampleInputName1">Name</label>
+                          <input type="text" asp-for="Name" class="form-control" id="exampleInputName1" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputName1">Surname</label>
+                          <input type="text" asp-for="Surname" class="form-control" id="exampleInputName1" placeholder="Surname">
+                      </div>
+                  
+                      <div class="form-group">
+                          <label for="exampleInputPassword4">Password</label>
+                          <input type="password" asp-for="Password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputPassword4">Confirm Password</label>
+                          <input type="password" asp-for="PasswordConfirm" class="form-control" id="exampleInputPassword4" placeholder="Password Confirm">
+                      </div>
+                      <div class="form-group">
+                      <label>File upload</label>
+                      <input type="file" asp-for="Picture">
+                      @*<div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <span class="input-group-append">
+                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                        </span>
+                      </div>*@
+                    </div>
+                     
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>

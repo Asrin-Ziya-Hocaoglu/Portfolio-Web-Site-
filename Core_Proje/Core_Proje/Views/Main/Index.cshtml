@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Home
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Home Update</h3>
+</div>
+@using (Html.BeginForm("Index", "Main", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.HomeId)
+    <br />
+    <label>Name</label>
+    @Html.TextBoxFor(x=>x.Name, new{@class="form-control"})
+    <br />
+    <label>Title</label>
+    @Html.TextBoxFor(x=>x.Title, new{@class="form-control"})
+    <br />
+    <label>Image Url</label>
+    @Html.TextBoxFor(x=>x.ImageUrl, new{@class="form-control"})
+    <br/>
+    <button  class="btn btn-success">Submit</button>
+}
+

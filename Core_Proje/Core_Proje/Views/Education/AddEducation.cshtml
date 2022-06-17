@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "AddEducation";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Add Experience</h4>
+            <br />
+            <form method="post" asp-controller="Education" asp-action="AddEducation" class="forms-sample">
+                <div class="form-group">
+                    <label>Education Name</label>
+                    <input type="text" class="form-control" name="Name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label >Date</label>
+                    <input type="text" class="form-control" name="Date" placeholder="Date">
+                </div>
+                <div class="form-group">
+                    <label >Description</label>
+                    <input type="text" class="form-control" name="Description" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <label >School</label>
+                    <input type="text" class="form-control" name="School" placeholder="School">
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    
+            </form>
+        </div>
+    </div>
+</div>
+

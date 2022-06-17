@@ -1,0 +1,59 @@
+﻿@using EntityLayer.Concrete
+@model List<Portfolio>
+ <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Order Status</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                              <th>#</th>
+                              <th>Platform</th>
+                              <th>Project Name</th>
+                              <th>Price</th>
+                              <th>Status</th>
+                              <th>Progressing</th>
+                             
+                          </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                               <td>@item.PortfolioId</td>
+                               
+                                    <td>
+                                   
+                                    <img src="@item.Platform" alt="image"/>
+                                   
+                                    </td>
+                                   <td><img src="@item.ImageUrl" alt="image"/>
+                                    <span class="pl-2">@item.Name</span>
+                                </td>
+                                <td>
+                                    @item.Price
+                                </td>
+                                @if (@item.Status == true)
+                                {
+                                    <td>
+                                        <div class="badge badge-outline-success">Completed</div>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <div class="badge badge-outline-danger">Uncompleted</div>
+                                    </td>
+                                }
+                                <td>@item.Value</td>
+                            </tr>
+                        }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

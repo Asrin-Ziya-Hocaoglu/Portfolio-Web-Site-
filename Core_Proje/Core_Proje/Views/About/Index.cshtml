@@ -1,0 +1,61 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("Index", "About", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            
+            <h3 class="mb-0">About Update</h3>
+            
+            @Html.HiddenFor(x => x.AboutId)
+            <br/>
+            <label>Title</label>
+            @Html.TextBoxFor(x => x.Title, new {@class = "form-control"})
+            <br/>
+            <label>Profession</label>
+            @Html.TextBoxFor(x => x.Profession, new {@class = "form-control"})
+            <br/>
+            <label>Introduction</label>
+            @Html.TextAreaFor(x => x.Introduction, 3, 10, new {@class = "form-control"})
+            <br/>
+            <label>Description</label>
+            @Html.TextAreaFor(x => x.Description, 3, 10, new {@class = "form-control"})
+            <br/>
+            <label>Birthday</label>
+            <input type="date" name="Birthday" class="form-control" value="@Model.Birthday"/>
+         @*   @Html.TextBoxFor(x => x.Birthday, new {@class = "form-control"})*@
+            <br/>
+            <label>Phone</label>
+            <input type="tel" name="Phone" value="@Model.Phone" class="form-control"/>
+           @* @Html.TextBoxFor(x => x.Phone, new {@class = "form-control"})*@
+            <br/>
+            <label>City</label>
+            @Html.TextBoxFor(x => x.City, new {@class = "form-control"})
+            <br/>
+            <label>Degree</label>
+            @Html.TextBoxFor(x => x.Degree, new {@class = "form-control"})
+            <br/>
+            <label>Mail</label>
+            <input type="email" name="Mail" value="@Model.Mail" class="form-control"/>
+@*            @Html.TextBoxFor(x => x.Mail, new {@class = "form-control"})*@
+            <br/>
+            <label>Address</label>
+            @Html.TextBoxFor(x => x.Address, new {@class = "form-control"})
+            <br/>
+            <label>Image Url</label>
+            @Html.TextBoxFor(x => x.ImageUrl, new {@class = "form-control"})
+            <br/>
+
+            <button class="btn btn-outline-success">Submit</button>
+        </div>
+    </div>
+    </div>
+}
+

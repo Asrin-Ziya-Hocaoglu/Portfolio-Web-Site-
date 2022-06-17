@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=WWWROOT_005CEDUCATION_005CADDEDUCATION/@EntryIndexedValue">wwwroot\Education\AddEducation</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=WWWROOT_005CEXPERIENCE_005CADDEXPERIENCE/@EntryIndexedValue">wwwroot\Experience\AddExperience</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=WWWROOT_005CSKILL/@EntryIndexedValue">wwwroot\Skill</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/MappedPaths/=CONTROLLERS_005CDEFAULTCONTROLLER_002ECS_005CSENDMESSAGE/@EntryIndexedValue"></s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=CONTROLLERS_005CDEFAULTCONTROLLER_002ECS_005CSENDMESSAGE/@EntryIndexedValue">Controllers\DefaultController.cs\SendMessage</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CEDUCATION_005CADDEDUCATION/@EntryIndexedValue">wwwroot\Education\AddEducation</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CEXPERIENCE_005CADDEXPERIENCE/@EntryIndexedValue">wwwroot\Experience\AddExperience</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CSKILL/@EntryIndexedValue">wwwroot\Skill</s:String></wpf:ResourceDictionary>

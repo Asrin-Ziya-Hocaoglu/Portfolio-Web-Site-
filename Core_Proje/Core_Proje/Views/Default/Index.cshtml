@@ -1,0 +1,171 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("HeaderPartial")
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+<!-- ======= Header ======= -->
+@await  Html.PartialAsync("NavBarPartial")
+
+<!-- End Header -->
+
+<!-- ======= Home Section ======= -->
+@await Component.InvokeAsync("HomeList")
+ <!-- End Home -->
+
+  <main id="main">
+
+  <!-- ======= About Section ======= -->
+  @await Component.InvokeAsync("AboutList")
+  <!-- End About Section -->
+
+   
+    
+
+  <!-- ======= Skills Section ======= -->
+  @await Component.InvokeAsync("SkillList")
+  <!-- End Skills Section -->
+
+  <!-- ======= Resume Section ======= -->
+  <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+           
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+              <h3 class="resume-title">Summary</h3>
+
+              @await Component.InvokeAsync("ResumeList")
+
+              <h3 class="resume-title">Education</h3>
+              @await  Component.InvokeAsync("EducationList")
+          </div>
+            @await  Component.InvokeAsync("ExperienceList")
+        </div>
+
+      </div>
+    </section>
+ 
+  <!-- End Resume Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  @await Component.InvokeAsync("PortfolioList")
+  <!-- End Portfolio Section -->
+
+  <!-- ======= Services Section ======= -->
+  @await Component.InvokeAsync("ServiceList")
+  <!-- End Services Section -->
+
+  <!-- ======= Testimonials Section ======= -->
+  @await  Component.InvokeAsync("TestimonialList")
+  <!-- End Testimonials Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>If you want to share your ideas for me , here my contact informations for you !</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+            @await Component.InvokeAsync("ContactDetails")
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                <form asp-controller="Default" asp-action="Index" method="post" role="form" class="php-email-form" >
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Your Name</label>
+                            <input type="text" name="Name" class="form-control" id="name" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="name">Your Email</label>
+                            <input type="email" class="form-control" name="Mail" id="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Subject</label>
+                        <input type="text" class="form-control" name="Subject" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Message</label>
+                        <textarea class="form-control" name="Content" rows="10" id="message" required></textarea>
+                    </div>
+                    <div class="text-center"><button type="submit" id="btnSend">Send Message</button></div>
+                </form>
+            </div>
+            @*@await Component.InvokeAsync("SendMessage")*@
+           @* @await Html.PartialAsync("SendMessage")*@
+           
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  @await Html.PartialAsync("FooterPartial")
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  @await Html.PartialAsync("ScriptsPartial")
+</body>
+
+</html>
+<script>
+
+    
+    $(document).ready(function() {
+        $("#btnSend").click(function() {
+            saveInDatabase("Default/Index");
+        });
+
+        function saveInDatabase(path) {
+            var Name = $("#name").val();
+            var Email = $("#email").val();
+            var Subject = $("#subject").val();
+            var Message = $("#message").val();
+            var parameters = { Name: Name, Mail: Email, Subject: Subject, Content: Message };
+            $.ajax({
+                async:true,
+                type: 'POST',
+                dataType: 'JSON',
+                contentType: 'application/json',
+                data: JSON.stringify(parameters),
+                url: "",
+                success: function(response) {
+                    if (response.success == true) {
+                        toastr.success(response.message, 'Your message has been sent succesfully', { timeOut: 3000});
+                    } else {
+                        toastr.info(response.message, 'Information', { timeOut: 3000 });
+
+                    }
+
+                },
+                error: function() {
+                    toastr.error("You have a big mistake", 'Warning', { timeOut: 3000 });
+                }
+            });
+        }
+
+
+    })
+
+
+</script>

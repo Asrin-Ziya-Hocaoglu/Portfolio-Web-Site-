@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Concrete.Resume
+@{
+    ViewData["Title"] = "EditResume";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditResume", "Resume", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Resume</h4>
+                <br/>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x=>x.ResumeId)
+                    <div class="form-group">
+                        <label>Resume Name</label>
+                        <input type="text" class="form-control" name="Name" value="@Model.Name">
+                    </div>
+                    <div class="form-group">
+                        <label >Summary Description</label>
+                        <input type="text" class="form-control" name="SummaryDescription" value="@Model.SummaryDescription">
+                    </div>
+                    <div class="form-group">
+                        <label >Phone Number</label>
+                        <input type="text" class="form-control" name="PhoneNumber" value="@Model.PhoneNumber">
+                    </div>
+                    <div class="form-group">
+                        <label >Address</label>
+                        <input type="text" class="form-control" name="Address" value="@Model.Address"/>
+                    </div>
+                    <div class="form-group">
+                        <label >Mail</label>
+                        <input type="text" class="form-control" name="Mail" value="@Model.Mail"/>
+                    </div>
+                    <button class="btn btn-success">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+    <div class="card">
+    <div class="card-body">
+    <h4 class="mb-0">Add Portfolio</h4>
+    @Html.HiddenFor(x=>x.PortfolioId)
+    <br />
+    @Html.Label("Portfolio Name")
+    @Html.TextBoxFor(x=>x.Name, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Name)
+    <br />
+    <label>Image 1</label>
+    @Html.TextBoxFor(x=>x.ImageUrl, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.ImageUrl)
+    <br />
+    <label>Platform</label>
+    @Html.TextBoxFor(x=>x.Platform, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Platform)
+    <br />
+
+    <label>Price</label>
+    @Html.TextBoxFor(x=>x.Price, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Price)
+    <br />
+
+    <label>Value</label>
+    @Html.TextBoxFor(x=>x.Value, new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Value)
+    <br />
+   
+
+
+  
+    <br/>
+    <button  class="btn btn-outline-success">Submit</button>
+    <button asp-action="Index"  class="btn btn-outline-danger">Cancel</button>
+    </div>
+    </div>
+    </div>
+}
+

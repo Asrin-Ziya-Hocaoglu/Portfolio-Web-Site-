@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description">Message Details</p>
+            <form class="form-sample">
+                @Html.HiddenFor(x=>x.WriterMessageId, new {@class="form-control"})
+                <div class="form-group">
+                    <label>Subject</label>
+                    <p class="form-control">@Model.Subject</p>
+                </div>
+                <div class="form-group">
+                    <label>Sender</label>
+                    <p class="form-control">@Model.SenderName</p>
+                </div>
+                <div class="form-group">
+                    <label>Receiver</label>
+                    <p class="form-control">@Model.ReceiverName</p>
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <p class="form-control">@Model.MessageContent</p>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <p class="form-control">@Model.Date</p>
+                </div>
+                <a asp-action="IncomingMessage" class="btn btn-outline-info">Admin Incoming Messages</a>
+                <a asp-action="OutGoingMessage" class="btn btn-outline-info">Admin Outgoing Messages</a>
+            </form>
+        </div>
+    </div>
+</div>
+

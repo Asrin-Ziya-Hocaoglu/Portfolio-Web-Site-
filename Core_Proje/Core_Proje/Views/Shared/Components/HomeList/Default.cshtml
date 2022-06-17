@@ -1,0 +1,15 @@
+﻿@using EntityLayer.Concrete
+@model List<Home>
+
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    
+        @foreach (var item in Model)
+        {
+            <div class="hero-container" data-aos="fade-in">
+            <h1>@item.Name</h1>
+                <p>I'm <span class="typed" data-typed-items="@item.Title"></span></p>
+                <a class="btn btn-light shadow-sm mt-1 " href="#contact">Get In Touch<i class="bx bx-arrow-to-right"></i></a>
+            </div>
+        }
+    
+</section>

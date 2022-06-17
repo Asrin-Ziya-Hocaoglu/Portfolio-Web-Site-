@@ -1,0 +1,21 @@
+﻿@using EntityLayer.Concrete
+@model List<Resume>
+
+
+   
+
+@foreach (var item in Model)
+{
+    <div class="resume-item">
+    <h4>@item.Name</h4>
+    <p><em>@item.SummaryDescription</em></p>
+    <ul>
+        <li>@item.Address</li>
+        <li>@item.PhoneNumber</li>
+        <li>@item.Mail</li>
+    </ul>
+    </div>
+}
+
+    
+

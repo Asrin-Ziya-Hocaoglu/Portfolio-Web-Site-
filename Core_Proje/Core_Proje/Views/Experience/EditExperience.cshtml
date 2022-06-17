@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concrete.Experience
+@{
+    ViewData["Title"] = "EditExperience";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+@using (Html.BeginForm("EditExperience", "Experience", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Experience</h4>
+                <br/>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x=>x.ExperienceId)
+                    <div class="form-group">
+                        <label>Experience Name</label>
+                        <input type="text" class="form-control" name="Name" value="@Model.Name">
+                    </div>
+                    <div class="form-group">
+                        <label >Date</label>
+                        <input type="text" class="form-control" name="Date" value="@Model.Date">
+                    </div>
+                    <div class="form-group">
+                        <label >Location</label>
+                        <input type="text" class="form-control" name="Location" value="@Model.Location">
+                    </div>
+                    <div class="form-group">
+                        <label >Description</label>
+                        <input type="text" class="form-control" name="Description" value="@Model.Description"/>
+                    </div>
+                    <button class="btn btn-success">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+}
+

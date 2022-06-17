@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "ContactSubPlace", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+            
+                <h3 class="mb-0">Contact Update</h3>
+            
+                @Html.HiddenFor(x => x.ContactId)
+                <br/>
+                <label>Title</label>
+                @Html.TextBoxFor(x => x.Title, new {@class = "form-control"})
+                <br/>
+                <label>Description</label>
+                @Html.TextBoxFor(x => x.Description, new {@class = "form-control"})
+                <br/>
+                <label>Location</label>
+                @Html.TextBoxFor(x => x.Location,  new {@class = "form-control"})
+                <br/>
+                <label>Description</label>
+                @Html.TextAreaFor(x => x.Description, 3, 10, new {@class = "form-control"})
+                <br/>
+                <label>Mail</label>
+                @Html.TextBoxFor(x => x.Mail, new {@class = "form-control"})
+                <br/>
+                <label>Phone Number</label>
+                @Html.TextBoxFor(x => x.PhoneNumber, new {@class = "form-control"})
+                <br/>
+
+                <button type="submit" class="btn btn-outline-success">Submit</button>
+            </div>
+        </div>
+    </div>
+}

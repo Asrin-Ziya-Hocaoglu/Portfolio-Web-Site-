@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.SocialMedia
+@{
+    ViewData["Title"] = "EditSocialMedia";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditSocialMedia", "SocialMedia", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Social Media</h4>
+                <br/>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x=>x.SocialMediaId)
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="Name" value="@Model.Name">
+                    </div>
+                    <div class="form-group">
+                        <label >Url</label>
+                        <input type="text" class="form-control" name="Url" value="@Model.Url">
+                    </div>
+                    <div class="form-group">
+                        <label >Icon</label>
+                        <input type="text" class="form-control" name="Icon" value="@Model.Icon">
+                    </div>
+
+                    
+                    <button class="btn btn-success">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+}
+

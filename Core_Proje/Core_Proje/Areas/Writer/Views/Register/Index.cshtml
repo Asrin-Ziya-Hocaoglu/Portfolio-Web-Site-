@@ -1,0 +1,109 @@
+﻿@model Core_Proje.Areas.Writer.Models.UserRegisterViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Corona Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="row w-100 m-0">
+          <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+            <div class="card col-lg-4 mx-auto">
+              <div class="card-body px-5 py-5">
+                <h3 class="card-title text-left mb-3">Register</h3>
+                <form method="post">
+                  <div class="form-group">
+                      <label>Name</label>
+                      <br/>
+                      <span class="text-danger" asp-validation-for="Name"></span>
+                      <input type="text" class="form-control " asp-for="Name">
+                  </div>
+                  <div class="form-group">
+                      <label>Surname</label>
+                      <br/>
+                      <span class="text-danger" asp-validation-for="Surname"></span>
+                      <input type="text" class="form-control" asp-for="Surname">
+                  </div>
+                    <div class="form-group">
+                        <label>Image Url</label>
+                        <br/>
+                        <span class="text-danger" asp-validation-for="ImageUrl"></span>
+                        <input type="text" class="form-control" asp-for="ImageUrl">
+                    </div>
+                    <div class="form-group">
+                        <label>Mail Address</label>
+                        <br/>
+                        <span class="text-danger" asp-validation-for="Mail"></span>
+                        <input type="text" class="form-control " asp-for="Mail">
+                    </div>
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <br/>
+                        <span class="text-danger" asp-validation-for="UserName"></span>
+                        <input type="text" class="form-control " asp-for="UserName">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <br/>
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                        <input type="password" class="form-control " asp-for="Password">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <br/>
+                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                        <input type="password" class="form-control " asp-for="ConfirmPassword">
+                    </div>
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-block enter-btn">Sign Up</button>
+                  </div>
+                    <p class="sign-up text-center">Already have an Account?<a href="/Writer/Login/Index/">Login</a></p>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+        </div>
+        <!-- row ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/off-canvas.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/hoverable-collapse.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/misc.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/settings.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/todolist.js"></script>
+    <!-- endinject -->
+  </body>
+</html>
+
+<!--123456Aa* ya da 123456aA*-->
+<!--123456Aa*-->
+<!--123456Aa--->
